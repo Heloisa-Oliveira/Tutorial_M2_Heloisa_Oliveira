@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="port">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="cabeçalho">
+        <img src = "foto.png" alt = "Minha foto">
+        <h1>Heloisa Cavalcanti Oliveira</h1>
+        <h2>Estudante de Engenharia de Software</h2>
+    </div>
+    
+    <div class="corpo">
+        <div class="coluna1">
+            <h3>Formação</h3>
+            <p>
+                <strong>Engenharia de Software | 2023</strong> <br>
+                Estudante de Engenharia de Software no Instituto de Tecnologia e Liderança - INTELI
+                <br> <br>
+                <strong>Ensino Médio | 2020 - 2022</strong> <br>
+                Graduada no Ensino Médio pelo Centro Educacional Leonardo da Vinci.
+            </p>
+
+            <h3>Experiências</h3>
+            <p>
+                <strong>UMEF Profº Thelmo Torres | 2019 - Auxiliar de Ensino</strong> <br>
+                Auxiliar de Matemática e Português na escola de ensino pública para as turmas EJAs noturnas.
+            </p>
+
+            <h3>Realizações</h3>
+            <p>
+                <strong>Bolsista por mérito | 2018 - 2022</strong> <br>
+                Bolsista integral por mérito na instituição de ensino privada Centro Educacional Leoanrdo da Vinci.
+                <br> <br>
+                <strong>OBMEP | 2017 - 2020</strong> <br>
+                Estudante do Programa de Iniciação Científica da OBMEP.
+            </p>
+        </div>
+
+        <div class="coluna2">
+            <h4> Sobre mim: </h4>
+            <p>
+                <ul>
+                    <li>Rua M.M.D.C 80</li> 
+                    <li>(27) 99706 9761 </li>
+                    <li>heloisa.oliveira@sou.inteli.edu.br</li>
+                    <li>Amante de matemática, tecnologia e educação, tem como objetivo ser professora de matemática em cursos superiores.</li>
+                </ul>
+            </p>
+
+            <h4> Habilidades: </h4>
+            <p>
+                <ul id="lista_habilidades">
+                </ul>
+
+                <ul>
+                    <input type="text" id="habilidades" name="habilidades">
+                    <button id="adicionar_habilidades" onclick="adicionar_habilidade()"> Adicionar </button>
+                </ul>
+            </p>
+
+            <h4> Personalidade: </h4>
+            <p>
+                <ul id="lista_personalidade">
+                </ul>
+                
+                <ul>
+                    <input type="text" id="personalidade" name="personalidade">
+                    <button id="adicionar_personalidade" onclick="adicionar_personalidade()"> Adicionar </button>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        $("#adicionar_habilidades").click(function(){
+            var item_habilidade = $("#habilidades").val();
+            $("#lista_habilidades").append("<li>"+item_habilidade+"</li>");
+        });
+
+        $("#adicionar_personalidade").click(function(){
+            var item_personalidade = $("#personalidade").val();
+            $("#lista_personalidade").append("<li>"+item_personalidade+"</li>");
+        });
+
+        $("h2").fadeOut(8000);
+    </script>
+    <script>document.addEventListener("DOMContentLoaded", function(){pega_personalidade()})</script> <!--assim que carregar o documento todo, chama a função-->
+    <script>document.addEventListener("DOMContentLoaded", function(){pega_habilidade()})</script>
+</body>
+</html>
